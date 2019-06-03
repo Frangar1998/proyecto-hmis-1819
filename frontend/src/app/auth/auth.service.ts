@@ -19,8 +19,7 @@ export class AuthService {
       tap((res:  JwtResponse ) => {
 
         if (res.user) {
-          localStorage.set("ACCESS_TOKEN", res.user.access_token);
-          localStorage.set("EXPIRES_IN", res.user.expires_in);
+          localStorage.setItem("ACCESS_TOKEN", res.user.access_token);
           this.authSubject.next(true);
         }
       })
@@ -33,8 +32,7 @@ export class AuthService {
       tap(async (res: JwtResponse) => {
 
         if (res.user) {
-          localStorage.set("ACCESS_TOKEN", res.user.access_token);
-          localStorage.set("EXPIRES_IN", res.user.expires_in);
+          localStorage.setItem("ACCESS_TOKEN", res.user.access_token);
           this.authSubject.next(true);
         }
       })
