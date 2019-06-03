@@ -1,0 +1,78 @@
+@import url(https://fonts.googleapis.com/css?family=Bilbo);
+
+.login{
+    width: 400px;
+    margin: 16px auto;
+    font-size: 20px;
+}
+
+.login-header,
+.login p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.login-triangle{
+    width: 0;
+    margin-right: auto;
+    margin-left: auto;
+    border: 12px solid transparent;
+    border-bottom-color: rgb(36,46,26);
+}
+
+.login-header {
+    background: rgb(88,24,125);
+    padding: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.login-container{
+    background: #1050C1;
+    padding: 12px;
+}
+
+.login p{
+    padding: 12px;
+}
+
+.login input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    padding: 16px;
+    outline: 0;
+    font-family: inherit;
+    font-size: 1.5em;
+}
+
+.login input[type="email"],
+.login input[type="password"]:focus {
+    border-color: #110000
+}
+
+.login input[type="submit"]{
+    background: rgb(99,98,97);
+    border-color: transparent;
+    color: #fff;
+    cursor: pointer;
+}
+
+.login input[type="submit"]:focus {
+    background: #505050
+}
+
+.login input[type="submit"]:focus {
+    border-color: #05a;
+}
+
+.has-error input[type="email"],
+.has-error input[type="password"]{
+    border-color: rgb(216,12,12);
+    color: rgb(0,0,0);
+}
