@@ -1,11 +1,11 @@
 <div class="container">
-  <div class="logo">Create a new account!</div>
+  <div class="logo">Crear cuenta nueva</div>
   <div class="register-item">
     <form #myform="ngForm" (ngSubmit)="register(myform)" class="form form-register">
 
       <div class="form-field">
-            <label class="user" for="register-username"><span class="hidden">Name</span></label>
-            <input name="name" id="register-username" type="email" class="form-input" placeholder="Name" ngModel required>
+            <label class="user" for="register-username"><span class="hidden">Nombre</span></label>
+            <input name="name" id="register-username" type="email" class="form-input" placeholder="Nombre" ngModel required>
       </div>
       <div class="form-field">
         <label class="user" for="register-email"><span class="hidden">Email</span></label>
@@ -18,8 +18,11 @@
       </div>
 
       <div class="form-field">
-        <input type="submit" value="Register">
+        <input type="submit" value="Regístrate">
       </div>
+      <button class="login" (click)="login()">
+        Volver a Login
+      </button>
     </form>
   </div>
 </div>

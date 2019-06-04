@@ -21,7 +21,6 @@ export class AuthService {
 
         if (res.user) {
           localStorage.setItem("ACCESS_TOKEN", res.user.access_token);
-          localStorage.setItem("EXPIRES_IN", res.user.expires_in + "");
           this.authSubject.next(true);
         }
       })
@@ -35,7 +34,10 @@ export class AuthService {
 
         if (res.user) {
           localStorage.setItem("ACCESS_TOKEN", res.user.access_token);
+<<<<<<< HEAD
           localStorage.setItem("EXPIRES_IN", res.user.expires_in + "");
+=======
+>>>>>>> 5ad31900c84d4035504340e1d861c1717205d1ff
           this.authSubject.next(true);
         }
       })
