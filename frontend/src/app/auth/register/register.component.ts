@@ -11,14 +11,20 @@ import { User } from '../user';
 export class RegisterComponent implements OnInit {
 
   constructor(private authService: AuthService, private router: Router) { }
-
+  errorEmail:boolean = false;
   ngOnInit() {}
 
   register(form) {
     console.log(form.value);
+   if(this.authService.comprobarEmail(form.value)){
+     this.errorEmail = true;
+   }else{
     this.authService.register(form.value).subscribe((res) => {
       this.router.navigateByUrl('/auth/home');
     });
+    
+   }
+    
   }
 
   login(){
