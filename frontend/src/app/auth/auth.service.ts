@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+//import { HttpClientModule } from '@angular/common/http';
 import { User } from  './user';
 import { JwtResponse } from  './jwt-response';
 import { tap } from  'rxjs/operators';
@@ -19,8 +20,8 @@ export class AuthService {
       tap((res:  JwtResponse ) => {
 
         if (res.user) {
-          localStorage.set("ACCESS_TOKEN", res.user.access_token);
-          localStorage.set("EXPIRES_IN", res.user.expires_in);
+          localStorage.setItem("ACCESS_TOKEN", res.user.access_token);
+          localStorage.setItem("EXPIRES_IN", res.user.expires_in + "");
           this.authSubject.next(true);
         }
       })
@@ -33,8 +34,8 @@ export class AuthService {
       tap(async (res: JwtResponse) => {
 
         if (res.user) {
-          localStorage.set("ACCESS_TOKEN", res.user.access_token);
-          localStorage.set("EXPIRES_IN", res.user.expires_in);
+          localStorage.setItem("ACCESS_TOKEN", res.user.access_token);
+          localStorage.setItem("EXPIRES_IN", res.user.expires_in + "");
           this.authSubject.next(true);
         }
       })
