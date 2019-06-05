@@ -14,6 +14,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  
+
   logout(){
     this.authService.signOut();
     this.router.navigateByUrl('/auth/login');

@@ -11,6 +11,8 @@ import { User } from '../user';
 })
 export class LoginComponent implements OnInit {
 
+  errorLogin : boolean = false;
+
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
@@ -22,7 +24,7 @@ export class LoginComponent implements OnInit {
       console.log("Logged in!");
       this.router.navigateByUrl('/auth/home');
     });    
-    
+    this.errorLogin = true;
   }
 
   register(){

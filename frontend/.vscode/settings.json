@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/ceae8fc0-18ab-47d3-8892-cf603d610a3a/resourceGroups/proyectohmis1819/providers/Microsoft.Web/sites/unbloloGolgakai",
+    "appService.deploySubpath": "dist\\frontend"
+}

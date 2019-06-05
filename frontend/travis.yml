@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+  - "10.15"
+dist: trusty
+sudo: required
+branches:
+  only:
+  - master
+before_script:
+  - npm install -g @angular/cli
+  - npm run build -base --prod 
+script:
+- npm run test-headless
+
+deploy:
+  provider: azure_web_apps
+  verbose: true
+  skip_cleanup: true
+  username: $AZURE_WA_USERNAME
+  password: $AZURE_WA_PASSWORD
+  site: $AZURE_WA_SITE

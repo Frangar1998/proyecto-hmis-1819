@@ -17,6 +17,7 @@ export class AuthService {
   authSubject  =  new  BehaviorSubject(false);
   errorEmail:boolean = false;
   errorLogin:boolean= false;
+  usuario: User;
 
   /*
   private subject = new BehaviorSubject<string>("");
@@ -32,6 +33,7 @@ export class AuthService {
   */
 
   register(user: User): Observable<JwtResponse> {
+    this.usuario = user;
       return this.httpClient.post<JwtResponse>(`${this.AUTH_SERVER}/register`, user).pipe(
         tap((res:  JwtResponse ) => {
           if (res.user) {
@@ -42,8 +44,12 @@ export class AuthService {
       );
   }
 
+  getUser(){
+    return this.usuario.name;
+  }
+
   comprobarEmail(user:User){
-    if(user.email.endsWith('@h.es')){
+    if(user.email.endsWith('@hmis.es')){
       return this.errorEmail=false;
     }else{
       return this.errorEmail = true;
